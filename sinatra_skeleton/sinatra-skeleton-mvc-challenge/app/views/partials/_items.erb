@@ -1,0 +1,14 @@
+<article id="<%= @item.id %>">
+      <h3><%= @item.title %></h3>
+      <p>
+        <p><%= @item.description %></p>
+        <span class='due-date'> Due Date <%= @item.due %></span> <br>
+        <p>Complete?</p>
+        <a class='completed' href='/items/<%= @item.id %>/completed'> <%= @item.complete %></a> <br>
+        <form class="delete" action='/items/<%= @item.id %>' method='post'>
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="delete item"></form>
+        <a class="edit-link" href='/items/<%= @item.id %>/edit'>edit item</a>
+      </p>
+    </article>
+
